@@ -89,7 +89,7 @@ _LIBCPP_END_NAMESPACE_STD
 #elif defined(_LIBCPP_OBJECT_FORMAT_ELF)
 
 #  define _LIBCPP_CAN_DETECT_OVERRIDDEN_FUNCTION 1
-#  define _LIBCPP_MAKE_OVERRIDABLE_FUNCTION_DETECTABLE __attribute__((__section__("__lcxx_override")))
+#  define _LIBCPP_MAKE_OVERRIDABLE_FUNCTION_DETECTABLE __attribute__((retain,__section__("__lcxx_override")))
 
 // This is very similar to what we do for Mach-O above. The ELF linker will implicitly define
 // variables with those names corresponding to the start and the end of the section.
